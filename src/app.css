@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition-property: color, background-color, border-color, fill, stroke, outline-offset;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in-out;
+}
+
+:root {
+	--color-text: rgba(255, 255, 255, 0.75);
+	--color-link: rgb(175, 95, 66);
+	--color-link-underline: rgb(175, 95, 66, 0.5);
+	--color-icon: rgba(255, 255, 255, 0.75);
+	--color-icon-hover: rgba(255, 255, 255, 1);
+	--color-text-muted: rgba(255, 255, 255, 0.5);
+	--color-text-faint: rgba(255, 255, 255, 0.25);
+	--color-border: rgba(255, 255, 255, 0.1);
+	--text-uppercase-letter-spacing: 0.1em;
+	--text-line-height: 1.5rem;
+	color: var(--color-text);
+	font-size: clamp(16px, 4dvw, 24px);
+	font-family: 'Urbanist', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-weight: 500;
+	line-height: var(--text-line-height);
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100dvh;
+	background-color: rgb(6, 3, 2);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: clamp(640px, 100dvw, 1280px) auto;
+	background-image: url('$lib/images/fibonacci.png');
+}
+
+img,
+svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+a[href],
+button {
+	font-size: inherit;
+	font-family: inherit;
+	background-color: transparent;
+	color: var(--color-link);
+	border: none;
+	cursor: pointer;
+	font-weight: inherit;
+	text-transform: inherit;
+	text-decoration-thickness: 1px;
+	text-decoration: underline;
+	letter-spacing: 0.05em;
+	text-decoration-color: var(--color-link-underline);
+	text-underline-offset: 0.25em;
+	border-radius: 999em;
+}
+@media (hover: hover) {
+	a[href]:hover,
+	button:hover {
+		text-decoration-color: var(--color-link-hover);
+	}
+}
+a[href]:focus-visible,
+button:focus-visible {
+	color: var(--color-link);
+	text-decoration: none;
+	outline: 0.1rem solid var(--color-link);
+	outline-offset: 0.5em;
+}
+
+a[href]:has(svg),
+button:has(svg) {
+	display: block;
+	height: 100%;
+}
+a[href] svg,
+button svg {
+	fill: var(--color-icon);
+	height: 100%;
+}
+@media (hover: hover) {
+	a[href]:hover svg,
+	button:hover svg {
+		fill: var(--color-icon-hover);
+	}
+}
+a[href]:focus-visible svg,
+button:focus-visible svg {
+	fill: var(--color-icon-hover);
+}
+
+h1 {
+	width: clamp(120px, 10rem, 240px);
+}
+
+p {
+	margin-bottom: var(--text-line-height);
+	text-align: center;
+	max-width: 24rem;
+	text-wrap: pretty;
+}
+
+.date {
+	letter-spacing: 0.25em;
+	color: var(--color-text-muted);
+	font-weight: 600;
+}
+
+h1 {
+	margin-bottom: 0.75rem;
+}
+
+figure {
+	margin-bottom: var(--text-line-height);
+}
+
+figcaption {
+	font-size: 0.75rem;
+	margin-top: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: var(--text-uppercase-letter-spacing);
+	line-height: 1.25rem;
+	color: var(--color-text-muted);
+	text-align: center;
+	font-weight: 600;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
