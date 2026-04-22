@@ -37,7 +37,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: clamp(640px, 100dvw, 1280px) auto;
-	background-image: url('$lib/images/fibonacci.png');
+	background-image: url('$lib/images/background.jpg');
 }
 
 img,
